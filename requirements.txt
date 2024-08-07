@@ -1,0 +1,6 @@
+Flask~=3.0.3
+Flask-SQLAlchemy
+flask-wtf
+psycopg2-binary
+requests~=2.32.3
+wtforms~=3.1.2
