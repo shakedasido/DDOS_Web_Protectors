@@ -1,24 +1,34 @@
-{% extends "base.html" %}
-{% block title %}Register{% endblock %}
-{% block content %}
-    <h2>Register</h2>
-    <form method="POST" action="{{ url_for('register') }}">
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Register</title>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Register</h2>
+      <form method="POST" action="/register">
         {{ form.hidden_tag() }}
-        <div class="form-group">
-            {{ form.email.label }}<br>
-            {{ form.email(size=32) }}
+        <div>
+          {{ form.email.label }}<br>
+          {{ form.email(size=32) }}
         </div>
-        <div class="form-group">
-            {{ form.password.label }}<br>
-            {{ form.password(size=32) }}
+        <div>
+          {{ form.password.label }}<br>
+          {{ form.password(size=32) }}
         </div>
-        <div class="form-group">
-            {{ form.confirm_password.label }}<br>
-            {{ form.confirm_password(size=32) }}
+        <div>
+          {{ form.confirm_password.label }}<br>
+          {{ form.confirm_password(size=32) }}
         </div>
         <div class="g-recaptcha" data-sitekey="{{ app.config['RECAPTCHA_SITE_KEY'] }}"></div>
-        <div class="form-group">
-            {{ form.submit() }}
+        <div>
+          {{ form.submit() }}
         </div>
-    </form>
-{% endblock %}
+      </form>
+    </div>
+  </body>
+</html>

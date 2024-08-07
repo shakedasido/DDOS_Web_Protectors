@@ -28,14 +28,12 @@ class RegistrationForm(FlaskForm):
     email = StringField('Email', validators=[DataRequired(), Email()])
     password = PasswordField('Password', validators=[DataRequired()])
     confirm_password = PasswordField('Confirm Password', validators=[DataRequired(), EqualTo('password')])
-    recaptcha = StringField('Recaptcha', validators=[DataRequired()])
     submit = SubmitField('Register')
 
 
 class LoginForm(FlaskForm):
     email = StringField('Email', validators=[DataRequired(), Email()])
     password = PasswordField('Password', validators=[DataRequired()])
-    recaptcha = StringField('Recaptcha', validators=[DataRequired()])
     submit = SubmitField('Login')
 
 
