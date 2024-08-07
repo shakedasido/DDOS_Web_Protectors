@@ -47,6 +47,7 @@ def verify_recaptcha(recaptcha_response):
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
+    print("Register route accessed")  # Debug print
     form = RegistrationForm()
     if form.validate_on_submit():
         recaptcha_response = request.form['g-recaptcha-response']
@@ -67,6 +68,7 @@ def register():
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
+    print("Login route accessed")  # Debug print
     form = LoginForm()
     if form.validate_on_submit():
         recaptcha_response = request.form['g-recaptcha-response']
@@ -90,7 +92,6 @@ def home():
 
 if __name__ == '__main__':
     import os
+
     port = int(os.environ.get('PORT', 5000))  # Default to port 5000 if PORT not set
     app.run(host='0.0.0.0', port=port, debug=True)
-
-
