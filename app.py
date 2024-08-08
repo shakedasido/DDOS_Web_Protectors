@@ -12,8 +12,8 @@ app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL', 'postgresql://
                                                                   ':f63p0Ig8qoZKVic46veOzzPczRM9aQUY@dpg'
                                                                   '-cqou2fij1k6c73d8t2d0-a/d_pro')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['RECAPTCHA_SITE_KEY'] = os.getenv('RECAPTCHA_SITE_KEY', '6LfcbiEqAAAAAKagH8z2LiFu4vICYM81N33DLB4O')
-app.config['RECAPTCHA_SECRET_KEY'] = os.getenv('RECAPTCHA_SECRET_KEY', '6LfcbiEqAAAAAPNRMaGNqHU4FVkg_BYUYMfKF2vF')
+app.config['RECAPTCHA_SITE_KEY'] = os.getenv('RECAPTCHA_SITE_KEY')
+app.config['RECAPTCHA_SECRET_KEY'] = os.getenv('RECAPTCHA_SECRET_KEY')
 
 db = SQLAlchemy(app)
 
